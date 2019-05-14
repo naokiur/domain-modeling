@@ -5,40 +5,28 @@ title "券売機モデル"
 
 actor "利用者" as user
 
-agent "券売機" as kenbaiki
+agent kenbaiki as "
+券売機
+--
+きっぷ
+お金
+"
+agent ticket as "
+きっぷ
+--
+価格
+区間
+"
+agent "お金" as money
 
-rectangle "持ち物" {
-    ' agent "ICカード" as ic
-    agent "お金" as money
-}
+user -right---> kenbaiki : お金を投入する
+' user -right---> money : 所持
+kenbaiki -left-> user : きっぷを発券する
 
-user o-left- 持ち物 : 所持
-
-rectangle "乗車券" {
-
-    agent "きっぷ" as kippu
-
-'    agent "定期券" as teiki
-
-}
-
-' rectangle "ICカード" {
-'     agent "交通系電子マネー" as denshi
-' }
-
-' user --> kenbaiki : ICカードとお金を入れる
-user -right---> kenbaiki : お金を入れる
-kenbaiki -left-> user : 発券する
-kenbaiki -left-> 乗車券
-' kenbaiki --> denshi
-
-note top of kenbaiki
-利用者の選択に応じて、
-何を返すか分かれる
-end note
-
-' きっぷ --> user : 返す
-' ICカード -right-> ic : チャージして返す
+user *-- money
+kenbaiki *-- money
+user *-- ticket
+kenbaiki *-- ticket
 
 
 @enduml
