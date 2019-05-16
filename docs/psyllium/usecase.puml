@@ -1,0 +1,19 @@
+@startuml
+
+left to right direction
+
+actor ユーザ as user 
+
+rectangle {
+    usecase "ライトを赤色にする" as red
+    usecase "ライトを青色にする" as green
+    usecase "ライトを消灯する" as off
+
+    user --> red
+    user --> green
+    user --> off
+    
+}
+
+
+@endumlw
