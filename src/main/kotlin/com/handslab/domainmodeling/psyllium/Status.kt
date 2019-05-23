@@ -1,7 +1,15 @@
 package com.handslab.domainmodeling.psyllium
 
-enum class Status {
-    RED ,
-    BLUE,
-    NOTHING
-}
+//sealed class Status {
+//    data class LightOn(val color: Color): Status()
+//    object LightOff: Status()
+//}
+//enum class Status(val color: Color) {
+//    LIGHT_ON(Color),
+//    LIGHT_OFF(Null)
+//
+//}
+
+open class Status
+class LightOnStatus(val color: Color): Status()
+class LightOffStatus: Status()

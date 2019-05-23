@@ -5,15 +5,14 @@ left to right direction
 actor ユーザ as user 
 
 rectangle {
-    usecase "ライトを赤色にする" as red
-    usecase "ライトを青色にする" as green
-    usecase "ライトを消灯する" as off
+    usecase "ライトの点灯する" as lightUp
+    usecase "ライトの色を変える" as change
+    usecase "ライトの消灯する" as lightOff
 
-    user --> red
-    user --> green
-    user --> off
-    
+    user --> lightUp
+    user --> change
+    user --> lightOff
 }
 
 
-@endumlw
+@enduml

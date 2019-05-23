@@ -1,6 +1,7 @@
 package com.handslab.domainmodeling.psyllium
 
 import org.hamcrest.CoreMatchers.equalTo
+import org.hamcrest.CoreMatchers.instanceOf
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 
@@ -11,7 +12,7 @@ class PsylliumTest {
         val psylium = Psyllium()
 
         psylium.lightOn()
-        assertThat(psylium.status, equalTo(Status.RED))
+        assertThat(psylium.status, instanceOf(LightOnStatus))
     }
 
     @Test
