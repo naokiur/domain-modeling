@@ -22,11 +22,9 @@ fun Application.api() {
         }
         get("/light/on") {
             psyllium.lightOn()
-            call.respondText(psyllium.status)
         }
         get("/light/off") {
             psyllium.lightOff()
-            call.respondText(psyllium.status)
         }
     }
 }

@@ -12,7 +12,7 @@ class PsylliumTest {
         val psylium = Psyllium()
 
         psylium.lightOn()
-        assertThat(psylium.status, instanceOf(LightOnStatus))
+        assertThat(psylium.status, instanceOf(LightOnStatus::class.java))
     }
 
     @Test
